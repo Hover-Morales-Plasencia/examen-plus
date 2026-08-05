@@ -1,0 +1,19 @@
+.no-encontrada {
+  display: grid;
+  justify-items: center;
+  gap: var(--espacio-md);
+  max-width: var(--contenedor);
+  margin: 0 auto;
+  padding: var(--espacio-xxl) var(--espacio-sm);
+  text-align: center;
+}
+
+.no-encontrada__titulo {
+  font-size: var(--texto-xxl);
+  font-weight: var(--peso-bold);
+  color: var(--color-dark);
+}
+
+.no-encontrada__texto {
+  color: var(--color-text);
+}

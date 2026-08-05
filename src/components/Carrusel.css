@@ -1,0 +1,74 @@
+.carrusel {
+  position: relative;
+}
+
+.carrusel__ventana {
+  overflow: hidden;
+}
+
+.carrusel__pista {
+  display: flex;
+  gap: var(--espacio-md);
+  transition: transform 0.4s ease;
+}
+
+.carrusel__elemento {
+  /* Cada tarjeta ocupa 1/n del ancho, descontando el hueco entre ellas. */
+  flex: 0 0
+    calc((100% - (var(--tarjetas-visibles) - 1) * var(--espacio-md)) / var(--tarjetas-visibles));
+  display: flex;
+}
+
+.carrusel__elemento > * {
+  width: 100%;
+}
+
+/* --- Flechas --- */
+
+.carrusel__flecha {
+  position: absolute;
+  top: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--area-tactil-min);
+  height: var(--area-tactil-min);
+  padding: 0;
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radio-pill);
+  background: var(--color-white);
+  color: var(--color-secondary-deep);
+  font-size: var(--texto-xxl);
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--sombra-tarjeta);
+  transition: background-color 0.15s ease;
+}
+
+.carrusel__flecha:hover {
+  background: var(--color-light);
+}
+
+.carrusel__flecha--anterior {
+  left: calc(var(--espacio-sm) * -1);
+}
+
+.carrusel__flecha--siguiente {
+  right: calc(var(--espacio-sm) * -1);
+}
+
+/* Los estilos del punto viven en PuntosIndicador.css; aquí solo su hueco. */
+.carrusel__puntos {
+  margin-top: var(--espacio-md);
+}
+
+/* 768px = --bp-tablet. Las @media no admiten var(), va literal. */
+@media (max-width: 768px) {
+  .carrusel__flecha--anterior {
+    left: 0;
+  }
+
+  .carrusel__flecha--siguiente {
+    right: 0;
+  }
+}

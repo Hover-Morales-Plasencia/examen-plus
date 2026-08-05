@@ -1,0 +1,5 @@
+/* Lo común está en TarjetaProducto.css. Aquí solo lo propio del grado. */
+
+.grado-card__cabecera {
+  aspect-ratio: 964 / 408;
+}

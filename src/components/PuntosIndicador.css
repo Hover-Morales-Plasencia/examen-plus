@@ -1,0 +1,37 @@
+.puntos {
+  display: flex;
+  justify-content: center;
+  gap: var(--espacio-xs);
+}
+
+.puntos__punto {
+  /* El círculo visible es pequeño, pero el área que se puede tocar mide 44px:
+     el pseudo-elemento la extiende sin agrandar el punto. */
+  position: relative;
+  width: var(--tamano-punto);
+  height: var(--tamano-punto);
+  padding: 0;
+  border: none;
+  border-radius: var(--radio-pill);
+  background: var(--color-border-input);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    width 0.15s ease;
+}
+
+.puntos__punto::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--area-tactil-min);
+  height: var(--area-tactil-min);
+  transform: translate(-50%, -50%);
+}
+
+/* El punto activo se distingue por ancho Y por color, no solo por color. */
+.puntos__punto[aria-current='true'] {
+  width: var(--tamano-punto-activo);
+  background: var(--color-secondary-deep);
+}

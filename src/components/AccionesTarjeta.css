@@ -1,0 +1,5 @@
+.acciones-tarjeta {
+  display: grid;
+  gap: var(--espacio-xs);
+  padding: 0 var(--espacio-md) var(--espacio-md);
+}

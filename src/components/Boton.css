@@ -1,0 +1,91 @@
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-xs);
+  /* Área táctil mínima de WCAG: el público es mayoritariamente móvil. */
+  min-height: var(--area-tactil-min);
+  /* Los paddings verticales no salen de la escala de ESPACIADO: aquí definen
+     la altura del botón, no el ritmo del layout. */
+  padding: 0.75rem var(--espacio-md);
+  border: 2px solid transparent;
+  border-radius: var(--radio-pill);
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-semibold);
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.boton:active {
+  transform: translateY(0);
+}
+
+.boton__icono {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* --- Variantes --- */
+
+/* Degradado morado -> azul, con las variantes Deep para que el texto blanco
+   sea legible en todo el ancho del botón. */
+.boton--primario {
+  background: var(--degradado-boton);
+  color: var(--color-white);
+}
+
+.boton--secundario {
+  background: var(--color-white);
+  border-color: var(--color-secondary-deep);
+  color: var(--color-secondary-deep);
+}
+
+/* El fondo se mantiene blanco en :hover a propósito: con el lila claro el
+   texto azul bajaba a 4.11:1. El realce visual lo dan el borde y la sombra,
+   que ya aporta .boton:hover. */
+.boton--secundario:hover {
+  border-color: var(--color-primary-deep);
+  color: var(--color-primary-deep);
+}
+
+/* Botón "Adquirir": mismo degradado, acompañado del icono de WhatsApp. */
+.boton--adquirir {
+  width: 100%;
+  background: var(--degradado-boton);
+  color: var(--color-white);
+}
+
+.boton--texto {
+  padding: var(--espacio-xs);
+  background: none;
+  color: var(--color-secondary-deep);
+  text-decoration: underline;
+}
+
+.boton--texto:hover {
+  box-shadow: none;
+  color: var(--color-primary-deep);
+}
+
+/* --- Tamaños --- */
+
+.boton--sm {
+  padding: var(--espacio-xs) var(--espacio-sm);
+  font-size: var(--texto-sm);
+}
+
+.boton--lg {
+  padding: 0.9rem var(--espacio-lg);
+  font-size: var(--texto-lg);
+}

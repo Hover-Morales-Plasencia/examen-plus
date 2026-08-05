@@ -1,0 +1,64 @@
+.detalle-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.detalle-hero__fondo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Velo oscuro: el texto blanco encima llega a 20:1. */
+.detalle-hero__velo {
+  position: absolute;
+  inset: 0;
+  background: var(--degradado-tarjeta);
+}
+
+.detalle-hero__contenido {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+  width: 100%;
+  max-width: var(--contenedor);
+  margin: 0 auto;
+  padding: var(--espacio-xl) var(--espacio-sm);
+}
+
+.detalle-hero__escudo {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.detalle-hero__titulo {
+  font-size: var(--texto-hero);
+  font-weight: var(--peso-bold);
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.detalle-hero__subtitulo {
+  margin-top: var(--espacio-xs);
+  font-size: var(--texto-lg);
+  color: var(--color-white);
+}
+
+/* 768px = --bp-tablet. */
+@media (max-width: 768px) {
+  .detalle-hero__titulo {
+    font-size: var(--texto-xxl);
+  }
+
+  .detalle-hero__escudo {
+    width: 64px;
+    height: 64px;
+  }
+}

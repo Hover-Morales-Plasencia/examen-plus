@@ -11,9 +11,9 @@ suscripciones a tres líneas de producto:
 
 | Línea                        | Qué ofrece                                              | Precio              |
 | ---------------------------- | ------------------------------------------------------- | ------------------- |
-| **Simulacros Universidades** | Simulacros tipo admisión para 10 universidades peruanas | S/40 mes · S/185 6m |
-| **Rendimiento Escolar**      | Refuerzo por grados, de 1° a 5° de secundaria           | S/50 mes · S/240 6m |
-| **Exámenes de Idiomas**      | TOEFL, IELTS, Cambridge, DELF/DALF y otros idiomas      | S/65 mes · S/320 6m |
+| **Simulacros Universidades** | Simulacros tipo admisión para 10 universidades peruanas | S/30 mes · S/175 6m |
+| **Rendimiento Escolar**      | Refuerzo por grados, de 1° a 5° de secundaria           | S/40 mes · S/230 6m |
+| **Exámenes de Idiomas**      | TOEFL, IELTS, Cambridge, DELF/DALF y otros idiomas      | S/55 mes · S/310 6m |
 
 Universidades cubiertas: UNI, UNC, UNSA, UNT, UNMSM, UP, UPCH, PUCP, UPAO, UPN.
 

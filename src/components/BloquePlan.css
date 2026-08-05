@@ -1,0 +1,33 @@
+.bloque-plan {
+  padding: var(--espacio-md);
+  /* Punteado, igual que la tarjeta destacada de la home. */
+  border: 2px dashed var(--color-primary-deep);
+  border-radius: var(--radio-md);
+  background: var(--color-light);
+}
+
+.bloque-plan__titulo {
+  margin-bottom: var(--espacio-sm);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-dark);
+}
+
+.bloque-plan__precio {
+  font-size: var(--texto-xxl);
+  font-weight: var(--peso-bold);
+  /* Negro: el precio se lee mejor con el máximo contraste. */
+  color: var(--color-dark);
+}
+
+.bloque-plan__precio span {
+  font-size: var(--texto-base);
+  font-weight: var(--peso-normal);
+  color: var(--color-text);
+}
+
+.bloque-plan__semestral {
+  margin-bottom: var(--espacio-md);
+  /* Texto oscuro, no el gris suave: sobre --color-light el gris no llega a 4.5:1. */
+  color: var(--color-text);
+}

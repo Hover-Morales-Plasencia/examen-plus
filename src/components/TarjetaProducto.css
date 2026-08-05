@@ -1,0 +1,74 @@
+/*
+ * Estructura común de las tarjetas de producto (universidad, grado, idioma).
+ *
+ * El cuerpo de cada una es distinto, pero el "envase" es el mismo: contenedor
+ * con borde y sombra, cabecera con imagen y velo, y pie de acciones. Vivía
+ * duplicado en los tres CSS; si cambia el radio o la sombra, ahora es un
+ * único sitio.
+ *
+ * Cada tarjeta añade sus propias clases BEM encima de estas.
+ */
+
+.tarjeta-producto {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radio-md);
+  overflow: hidden;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.tarjeta-producto__cabecera {
+  position: relative;
+}
+
+.tarjeta-producto__fondo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Degradado oscuro en la base: el texto blanco encima llega a 20:1. */
+.tarjeta-producto__velo {
+  position: absolute;
+  inset: 0;
+  background: var(--degradado-tarjeta);
+}
+
+/* Título sobre la imagen, anclado abajo a la izquierda. */
+.tarjeta-producto__titulo {
+  position: absolute;
+  bottom: var(--espacio-sm);
+  left: var(--espacio-sm);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-white);
+}
+
+/* Empuja el pie de acciones al fondo para que todas las tarjetas de una
+   misma fila tengan los botones a la misma altura. */
+.tarjeta-producto__cuerpo {
+  flex: 1;
+  padding: var(--espacio-md);
+}
+
+.tarjeta-producto__lista {
+  display: grid;
+  gap: var(--espacio-sm);
+}
+
+.tarjeta-producto__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-xs);
+  font-size: var(--texto-sm);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.tarjeta-producto__item img {
+  flex-shrink: 0;
+  margin-top: 2px;
+}

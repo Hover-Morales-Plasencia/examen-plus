@@ -1,0 +1,134 @@
+/*
+ * variables.css — Espejo en CSS de src/config/siteConfig.js
+ *
+ * Los componentes usan estas variables; JavaScript usa siteConfig.js.
+ *
+ * ⚠️ ESPEJO MANUAL: si añades o cambias un valor aquí, cámbialo también en
+ *    src/config/siteConfig.js. Nada verifica la sincronía automáticamente.
+ *
+ * ❌ .boton { background: #5C5CE6; }
+ * ✅ .boton { background: var(--color-primary-deep); }
+ */
+
+:root {
+  /* --- Colores de marca ---
+   * Se conservan los del sitio original. Lo que cambia es el USO: un color
+   * puede servir para un logo y no para texto, porque el texto necesita
+   * contraste y un logo no.
+   */
+  /* Morado de marca. Logo y decoración. NO llevar texto encima (4.37:1). */
+  --color-primary: #6464ff;
+  /* Morado para superficies con texto blanco: botones, badges. 5.09:1. */
+  --color-primary-deep: #5c5ce6;
+
+  /* Azul de marca. Degradados y gráficos. NO usar como texto (2.80:1). */
+  --color-secondary: #279fff;
+  /* Azul para titulares grandes resaltados (>=24px). 3.43:1. */
+  --color-secondary-title: #1e8fe6;
+  /* Azul para texto normal y enlaces. Cumple 4.5:1 sobre los tres fondos
+     claros: 5.21:1 sobre blanco, 4.64:1 sobre light, 4.95:1 sobre gray-bg. */
+  --color-secondary-deep: #0e70b8;
+
+  /* --- Texto --- */
+  --color-text: #323232;
+  /* 4.74:1 sobre white OK - 4.51:1 sobre gray-bg OK - 4.22:1 sobre light NO.
+     NO usar sobre --color-light. */
+  --color-text-muted: #737373;
+  --color-dark: #1c1c1c;
+
+  /* --- Fondos --- */
+  --color-white: #ffffff;
+  --color-light: #eff1ff;
+  --color-gray-bg: #f9f9fa;
+
+  /* --- Bordes --- */
+  /* Decorativo (1.27:1). No sirve para bordes de campos de formulario. */
+  --color-border: #e5e4e7;
+  /* Inputs y anillo de foco (4.49:1 sobre blanco). */
+  --color-border-input: #767680;
+
+  /* --- Degradados ---
+   * `boton` usa las variantes Deep porque lleva texto blanco encima y tiene
+   * que ser legible en todo su ancho. `marca` conserva los colores puros para
+   * superficies sin texto.
+   */
+  --degradado-boton: linear-gradient(90deg, #5c5ce6 0%, #0e70b8 100%);
+  --degradado-boton-vertical: linear-gradient(180deg, #5c5ce6 0%, #0e70b8 100%);
+  --degradado-marca: linear-gradient(90deg, #6464ff 0%, #279fff 100%);
+  /* Oscurece la base de las imágenes para que el texto encima se lea (20.38:1). */
+  --degradado-tarjeta: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
+
+  /* --- Capas sobre imágenes ---
+   * Solo `fuerte` y `medio` admiten texto blanco encima.
+   * `suave` y `sutil` son puramente decorativos.
+   */
+  --overlay-fuerte: rgba(0, 0, 0, 0.8);
+  --overlay-medio: rgba(0, 0, 0, 0.6);
+  --overlay-suave: rgba(0, 0, 0, 0.25);
+  --overlay-sutil: rgba(0, 0, 0, 0.12);
+  --overlay-lila: rgba(239, 241, 255, 0.69);
+  /* Borde claro sobre fondo oscuro (footer). */
+  --overlay-borde-claro: rgba(255, 255, 255, 0.2);
+
+  /* --- Tipografía --- */
+  --fuente-texto: 'Roboto', system-ui, sans-serif;
+  --fuente-destacada: 'Roboto Slab', Georgia, serif;
+
+  --peso-normal: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --peso-bold: 700;
+
+  /* Desde --texto-xl (24px) cuenta como "texto grande" para WCAG. */
+  --texto-sm: 0.875rem;
+  --texto-base: 1rem;
+  --texto-lg: 1.25rem;
+  --texto-xl: 1.5rem;
+  --texto-xxl: 2rem;
+  --texto-hero: 3rem;
+
+  /* --- Espaciado --- */
+  --espacio-xs: 0.5rem;
+  --espacio-sm: 1rem;
+  --espacio-md: 1.5rem;
+  --espacio-lg: 2.5rem;
+  --espacio-xl: 4rem;
+  --espacio-xxl: 6rem;
+
+  /* --- Radios --- */
+  --radio-sm: 8px;
+  --radio-md: 12px;
+  --radio-lg: 20px;
+  --radio-pill: 999px;
+
+  /* --- Sombras --- */
+  --sombra-tarjeta: 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --sombra-elevada: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+
+  /* --- Layout ---
+   * `contenedor` es el ancho de lectura cómoda (páginas de detalle, texto).
+   * `contenedor-ancho` lo usan el hero y las rejillas de tarjetas de la home,
+   * que en pantallas grandes dejaban demasiado espacio muerto a los lados.
+   */
+  --contenedor: 1280px;
+  --contenedor-ancho: 1440px;
+  /* Ancho máximo de un párrafo. Por encima de ~75 caracteres por línea el ojo
+     pierde el renglón al volver al margen izquierdo. */
+  --ancho-lectura: 68ch;
+
+  /* Área táctil mínima de cualquier elemento interactivo (WCAG 2.1 AA). */
+  --area-tactil-min: 44px;
+
+  /* Puntos indicadores del hero y de los carruseles. */
+  --tamano-punto: 10px;
+  --tamano-punto-activo: 28px;
+
+  /* --- Puntos de quiebre ---
+   * Aquí solo como referencia para JavaScript (matchMedia): las @media de CSS
+   * no admiten var(), así que en cada media query van escritos literales.
+   */
+  --bp-movil: 480px;
+  --bp-tablet: 768px;
+  --bp-escritorio: 1024px;
+  --bp-ancho: 1280px;
+}

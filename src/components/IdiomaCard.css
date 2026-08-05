@@ -1,0 +1,12 @@
+/* Lo común está en TarjetaProducto.css. Aquí solo lo propio del idioma. */
+
+.idioma-card__cabecera {
+  aspect-ratio: 1000 / 474;
+}
+
+.idioma-card__descripcion {
+  margin-top: var(--espacio-sm);
+  font-size: var(--texto-sm);
+  color: var(--color-text);
+  line-height: 1.5;
+}

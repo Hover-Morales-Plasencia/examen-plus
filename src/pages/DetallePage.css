@@ -1,0 +1,60 @@
+/* Estilos compartidos por las páginas de detalle: universidad, grado e idioma. */
+
+.detalle {
+  padding: var(--espacio-xl) var(--espacio-sm);
+  background: var(--color-white);
+}
+
+.detalle__contenedor {
+  display: grid;
+  gap: var(--espacio-lg);
+  max-width: var(--contenedor);
+  margin: 0 auto;
+}
+
+.detalle__bloque {
+  padding: var(--espacio-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radio-md);
+}
+
+.detalle__titulo {
+  margin-bottom: var(--espacio-sm);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-dark);
+}
+
+.detalle__lista {
+  display: grid;
+  gap: var(--espacio-sm);
+}
+
+.detalle__item {
+  padding-left: var(--espacio-md);
+  position: relative;
+  max-width: var(--ancho-lectura);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.detalle__item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary-deep);
+  font-weight: var(--peso-bold);
+}
+
+.detalle__parrafo {
+  max-width: var(--ancho-lectura);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Las etiquetas usan las clases compartidas .etiquetas / .etiqueta
+   (definidas en src/styles/index.css) para verse igual en toda la web. */
+
+.detalle__volver {
+  text-align: center;
+}

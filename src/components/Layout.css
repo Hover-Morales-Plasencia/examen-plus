@@ -1,0 +1,22 @@
+/*
+ * Enlace de salto al contenido.
+ * Fuera de la pantalla hasta que recibe el foco: invisible para quien usa
+ * ratón, imprescindible para quien navega con teclado.
+ */
+.salto-contenido {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  padding: var(--espacio-xs) var(--espacio-sm);
+  background: var(--color-primary-deep);
+  color: var(--color-white);
+  font-weight: var(--peso-semibold);
+  border-bottom-right-radius: var(--radio-sm);
+  transform: translateY(-150%);
+  transition: transform 0.15s ease;
+}
+
+.salto-contenido:focus {
+  transform: translateY(0);
+}

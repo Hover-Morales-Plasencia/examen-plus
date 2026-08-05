@@ -1,0 +1,36 @@
+.home__objetivos,
+.home__idiomas,
+.home__planes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-md);
+  align-items: stretch;
+}
+
+.home__idiomas > li,
+.home__planes > li {
+  display: flex;
+}
+
+.home__idiomas > li > *,
+.home__planes > li > * {
+  width: 100%;
+}
+
+/* 1024px = --bp-escritorio. */
+@media (max-width: 1024px) {
+  .home__objetivos,
+  .home__idiomas,
+  .home__planes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 768px = --bp-tablet. */
+@media (max-width: 768px) {
+  .home__objetivos,
+  .home__idiomas,
+  .home__planes {
+    grid-template-columns: 1fr;
+  }
+}

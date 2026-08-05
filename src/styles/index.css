@@ -1,9 +1,9 @@
 /*
  * Estilos globales base.
- * Las variables de marca (colores, fuentes) se definen en el PASO 7,
- * a partir de src/config/siteConfig.js.
+ * Los valores de marca viven en variables.css (espejo de src/config/siteConfig.js).
  */
 
+@import './variables.css';
 @import './fonts.css';
 
 *,
@@ -18,7 +18,10 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Roboto', system-ui, sans-serif;
+  font-family: var(--fuente-texto);
+  font-weight: var(--peso-normal);
+  color: var(--color-text);
+  background: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -56,9 +59,30 @@ textarea {
   color: inherit;
 }
 
+/*
+ * Los enlaces de navegación y los que parecen botón no llevan subrayado.
+ * ⚠️ Un enlace DENTRO de un párrafo sí debe subrayarse: si solo se distingue
+ *    por el color, quien no percibe ese matiz no lo ve. Usa .enlace para eso.
+ */
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.enlace {
+  /* La versión Deep, no el azul puro: como texto, #279FFF solo da 2.80:1. */
+  color: var(--color-secondary-deep);
+  text-decoration: underline;
+}
+
+/*
+ * Foco visible. Solo aparece al navegar con teclado, no al hacer clic.
+ * Nunca lo quites sin poner otra señal igual de visible en su lugar.
+ */
+:focus-visible {
+  outline: 3px solid var(--color-primary-deep);
+  outline-offset: 2px;
+  border-radius: var(--radio-sm);
 }
 
 /* Respeta a quien pidió menos animación en su sistema operativo. */
@@ -74,4 +98,24 @@ a {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/*
+ * Etiquetas (badges): certificaciones de idiomas, áreas de examen.
+ * Compartidas para que se vean igual en las tarjetas y en las páginas de detalle.
+ */
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+}
+
+.etiqueta {
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radio-pill);
+  background: var(--color-light);
+  /* Texto oscuro sobre lila claro: 11.4:1. */
+  color: var(--color-text);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-medio);
 }

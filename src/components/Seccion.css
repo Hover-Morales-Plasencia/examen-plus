@@ -1,0 +1,52 @@
+.seccion {
+  /* Compensa la cabecera fija al saltar a un ancla: sin esto el título queda
+     tapado por el header. */
+  scroll-margin-top: 90px;
+  padding: var(--espacio-xl) var(--espacio-md);
+}
+
+.seccion--blanco {
+  background: var(--color-white);
+}
+
+.seccion--claro {
+  background: var(--color-light);
+}
+
+.seccion--gris {
+  background: var(--color-gray-bg);
+}
+
+.seccion__contenedor {
+  max-width: var(--contenedor-ancho);
+  margin: 0 auto;
+}
+
+.seccion__cabecera {
+  margin-bottom: var(--espacio-lg);
+  text-align: center;
+}
+
+/* Antetítulo: es decorativo, por eso es un <p> y no un heading.
+   Usa el azul profundo porque va a tamaño normal (4.61:1). */
+.seccion__antetitulo {
+  font-weight: var(--peso-semibold);
+  color: var(--color-secondary-deep);
+}
+
+.seccion__titulo {
+  font-size: var(--texto-xxl);
+  font-weight: var(--peso-bold);
+  color: var(--color-dark);
+}
+
+/* 768px = --bp-tablet. */
+@media (max-width: 768px) {
+  .seccion {
+    padding: var(--espacio-lg) var(--espacio-sm);
+  }
+
+  .seccion__titulo {
+    font-size: var(--texto-xl);
+  }
+}

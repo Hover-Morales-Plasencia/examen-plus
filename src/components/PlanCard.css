@@ -1,0 +1,63 @@
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--espacio-lg) var(--espacio-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+/* El plan destacado se distingue por borde punteado Y por sombra, no solo por
+   color: quien no percibe bien el matiz igual nota la diferencia. */
+.plan-card--destacado {
+  border: 2px dashed var(--color-primary-deep);
+  box-shadow: var(--sombra-elevada);
+}
+
+.plan-card__nombre {
+  font-size: var(--texto-lg);
+  font-weight: var(--peso-semibold);
+  color: var(--color-text);
+}
+
+.plan-card__precio {
+  margin-top: var(--espacio-sm);
+}
+
+.plan-card__monto {
+  font-size: var(--texto-xxl);
+  font-weight: var(--peso-bold);
+  /* Negro, no el morado de marca: el precio es el dato que más se lee y con el
+     máximo contraste (17.04:1) se distingue a la primera. */
+  color: var(--color-dark);
+}
+
+.plan-card__periodo {
+  font-size: var(--texto-base);
+  color: var(--color-text);
+}
+
+.plan-card__semestral {
+  font-size: var(--texto-base);
+  font-weight: var(--peso-medio);
+  color: var(--color-text);
+}
+
+.plan-card__beneficios {
+  display: grid;
+  gap: var(--espacio-sm);
+  margin: var(--espacio-md) 0;
+  flex: 1;
+}
+
+.plan-card__beneficio {
+  font-size: var(--texto-sm);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.plan-card__cta {
+  margin-top: auto;
+}

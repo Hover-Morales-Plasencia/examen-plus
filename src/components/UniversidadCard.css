@@ -1,0 +1,34 @@
+/* Lo común está en TarjetaProducto.css. Aquí solo lo propio de la universidad. */
+
+.uni-card__cabecera {
+  aspect-ratio: 16 / 9;
+}
+
+.uni-card__identidad {
+  position: absolute;
+  right: var(--espacio-sm);
+  bottom: var(--espacio-sm);
+  left: var(--espacio-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+}
+
+.uni-card__escudo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.uni-card__sigla {
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.uni-card__nombre {
+  font-size: var(--texto-sm);
+  color: var(--color-white);
+}

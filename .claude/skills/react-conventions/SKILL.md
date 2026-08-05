@@ -41,6 +41,29 @@ src/pages/UniversidadPage.jsx    -> export default function UniversidadPage()
 - Hooks en `src/hooks/` con prefijo `use` y **camelCase**: `useStickyHeader.js`.
 - Servicios y config en **camelCase**: `siteConfig.js`, `universidades.js`.
 
+### Dónde va el CSS
+
+El CSS de un componente vive **junto a su `.jsx`**, con el mismo nombre:
+
+```
+src/components/PlanCard.jsx
+src/components/PlanCard.css   -> se importa desde PlanCard.jsx
+```
+
+`src/styles/` es solo para lo global: reset, variables y fuentes.
+
+En CSS plano **todas las clases son globales**, así que usa el nombre del
+componente como prefijo (convención BEM) para que no choquen entre sí:
+
+```css
+.plan-card {
+}
+.plan-card__titulo {
+}
+.plan-card--destacado {
+}
+```
+
 ## 3. Props desestructuradas en la firma
 
 ```jsx
@@ -164,6 +187,11 @@ Igual con la lógica reutilizable: va a `src/hooks/`, no repetida en cada compon
 
 - **Código en español**: nombres de variables, funciones, props y comentarios.
 - **API de React en inglés**, como es natural: `useState`, `onClick`, `className`.
+- **Excepción intencional:** las claves de `COLORES` en `siteConfig.js` van en
+  inglés (`primary`, `secondary`, `textMuted`, `grayBg`) porque es el estándar
+  universal en sistemas de diseño y coincide con las variables del sitio
+  original. El resto de tokens (`SOMBRAS`, `OVERLAYS`, `ESPACIADO`…) va en
+  español.
 - Los comentarios explican **por qué**, no **qué**.
 
 ```jsx

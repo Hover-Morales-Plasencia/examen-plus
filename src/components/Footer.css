@@ -1,0 +1,110 @@
+.footer {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.footer__contenedor {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: var(--espacio-lg);
+  max-width: var(--contenedor-ancho);
+  margin: 0 auto;
+  padding: var(--espacio-lg) var(--espacio-md);
+}
+
+.footer__marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+}
+
+.footer__marca img {
+  width: 64px;
+  height: auto;
+}
+
+.footer__lema {
+  font-family: var(--fuente-destacada);
+  font-size: var(--texto-sm);
+  /* Blanco sobre #1C1C1C: 17.04:1. */
+  color: var(--color-white);
+}
+
+/* Cada bloque alinea su contenido arriba, para que los títulos de "Secciones"
+   y "Contacto" queden a la misma altura aunque tengan distinto número de
+   enlaces. */
+.footer__bloque {
+  align-self: start;
+}
+
+.footer__titulo {
+  margin-bottom: var(--espacio-xs);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer__lista {
+  display: grid;
+}
+
+.footer__enlace {
+  display: inline-flex;
+  align-items: center;
+  /* Área táctil mínima de WCAG, sin inflar el alto del bloque más de lo justo. */
+  min-height: var(--area-tactil-min);
+  font-size: var(--texto-sm);
+  color: var(--color-white);
+}
+
+.footer__enlace:hover {
+  text-decoration: underline;
+}
+
+.footer__enlace--red {
+  text-transform: capitalize;
+}
+
+.footer__legal {
+  padding: var(--espacio-xs) var(--espacio-sm);
+  border-top: 1px solid var(--overlay-borde-claro);
+  text-align: center;
+  font-size: var(--texto-sm);
+}
+
+/* 1024px = --bp-escritorio. */
+@media (max-width: 1024px) {
+  .footer__contenedor {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-md);
+  }
+
+  .footer__marca {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 768px = --bp-tablet.
+   En móvil el pie se compacta: en la versión anterior ocupaba más de una
+   pantalla completa. Las listas pasan a dos columnas y se redujo el padding
+   vertical, sin tocar el área táctil de los enlaces. */
+@media (max-width: 768px) {
+  .footer__contenedor {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-md);
+    padding: var(--espacio-md) var(--espacio-sm);
+  }
+
+  .footer__lista {
+    grid-template-columns: 1fr 1fr;
+    /* Con row-gap 0 dos enlaces de filas contiguas quedan pegados y el pulgar
+       puede acertar el de al lado. Un respiro mínimo evita el toque erróneo. */
+    gap: var(--espacio-xs) var(--espacio-sm);
+  }
+
+  /* El área táctil se mantiene en 44px también en móvil: el público es
+     mayoritariamente celular y ahí es donde más importa. La compactación
+     viene de quitar contenido duplicado y de las dos columnas, no de
+     encoger lo que el dedo tiene que acertar. */
+}

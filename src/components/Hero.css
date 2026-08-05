@@ -1,0 +1,112 @@
+.hero {
+  padding: var(--espacio-lg) var(--espacio-md);
+  background: var(--color-light);
+}
+
+.hero__contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--espacio-xl);
+  max-width: var(--contenedor-ancho);
+  margin: 0 auto;
+  padding: var(--espacio-xl);
+  background: var(--color-white);
+  border-radius: var(--radio-lg);
+}
+
+.hero__titulo {
+  font-size: var(--texto-hero);
+  font-weight: var(--peso-bold);
+  line-height: 1.15;
+  color: var(--color-dark);
+}
+
+/* Azul de marca en su versión para titulares grandes: 3.43:1, que cumple el
+   mínimo de 3:1 para texto de 24px o más. NO usar en texto pequeño. */
+.hero__resalte {
+  color: var(--color-secondary-title);
+}
+
+.hero__subtitulo {
+  max-width: var(--ancho-lectura);
+  margin-top: var(--espacio-sm);
+  font-weight: var(--peso-semibold);
+  color: var(--color-text);
+}
+
+.hero__ventajas {
+  display: grid;
+  gap: var(--espacio-xs);
+  margin-top: var(--espacio-md);
+}
+
+.hero__ventaja {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  color: var(--color-text);
+}
+
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-lg);
+}
+
+/* --- Galería --- */
+
+.hero__galeria {
+  display: grid;
+  gap: var(--espacio-sm);
+}
+
+.hero__imagenes {
+  position: relative;
+  aspect-ratio: 1027 / 592;
+  border-radius: var(--radio-md);
+  overflow: hidden;
+}
+
+.hero__imagen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.hero__imagen--activa {
+  opacity: 1;
+}
+
+/* 1024px = --bp-escritorio. */
+@media (max-width: 1024px) {
+  .hero__contenedor {
+    grid-template-columns: 1fr;
+    gap: var(--espacio-lg);
+    padding: var(--espacio-lg);
+  }
+
+  .hero__titulo {
+    font-size: var(--texto-xxl);
+  }
+}
+
+/* 768px = --bp-tablet. */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--espacio-sm);
+  }
+
+  .hero__contenedor {
+    padding: var(--espacio-md);
+  }
+
+  .hero__acciones {
+    margin-top: var(--espacio-md);
+  }
+}

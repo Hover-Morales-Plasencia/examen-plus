@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="es">
+<!--
+  El idioma, el título y la descripción los inyecta Vite desde
+  src/config/siteConfig.js al construir. No los edites aquí: cámbialos allá.
+-->
+<html lang="%IDIOMA%">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Prepárate para tu examen de admisión, mejora tu rendimiento escolar y certifícate en idiomas con simulacros reales y clases selectas."
-    />
-    <title>Examen Plus – Logra ser el mejor</title>
+    <meta name="description" content="%DESCRIPCION%" />
+    <title>%TITULO%</title>
   </head>
   <body>
     <div id="root"></div>
