@@ -1,0 +1,8 @@
+dist
+node_modules
+coverage
+archivos-existentes
+package-lock.json
+*.woff2
+*.webp
+*.png

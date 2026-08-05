@@ -1,0 +1,35 @@
+{
+  // Formatea con Prettier cada vez que guardas.
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Al guardar, ESLint arregla solo lo que puede arreglar solo.
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  "eslint.validate": ["javascript", "javascriptreact"],
+
+  // Usa la versión de Prettier del proyecto, no la global del editor.
+  "prettier.requireConfig": true,
+
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Ruido fuera del buscador y del explorador.
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/archivos-existentes": true,
+    "**/package-lock.json": true
+  }
+}

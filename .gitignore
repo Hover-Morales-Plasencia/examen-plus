@@ -1,0 +1,53 @@
+# Dependencias
+node_modules
+.pnp
+.pnp.js
+
+# Build
+dist
+dist-ssr
+build
+*.local
+
+# Variables de entorno — NUNCA subir claves ni tokens al repositorio
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Caché de herramientas
+.eslintcache
+.cache
+.vite
+.temp
+coverage
+
+# Sitio legacy: material de referencia, no código del proyecto (~16 MB)
+archivos-existentes/
+
+# Editores
+# settings.json y extensions.json SÍ se versionan: así todo el equipo
+# hereda el formatOnSave y las extensiones recomendadas.
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+*:Zone.Identifier
